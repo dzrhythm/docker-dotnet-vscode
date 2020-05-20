@@ -9,6 +9,11 @@ COPY ["src/WebApi/WebApi.csproj", "WebApi/"]
 COPY ["src/SharedLib/SharedLib.csproj", "SharedLib/"]
 COPY ["NuGet.Config", "."]
 
+# ARG PAT
+# RUN wget -qO- https://raw.githubusercontent.com/Microsoft/artifacts-credprovider/master/helpers/installcredprovider.sh | bash
+# ENV NUGET_CREDENTIALPROVIDER_SESSIONTOKENCACHE_ENABLED true
+# ENV VSS_NUGET_EXTERNAL_FEED_ENDPOINTS "{\"endpointCredentials\": [{\"endpoint\":\"https://pkgs.dev.azure.com/ais-zientara/AzureLearning/_packaging/AisDemo/nuget/v3/index.json\", \"password\":\"${PAT}\"}]}"
+
 RUN dotnet restore "./WebApi/WebApi.csproj"
 COPY src/. .
 WORKDIR "/src/WebApi/"

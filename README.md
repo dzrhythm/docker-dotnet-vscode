@@ -1,6 +1,6 @@
 # docker-dotnet-vscode
 
-Samples for developing .NET Core applications with Docker and Visual Studio Code.
+Samples for developing and debugging .NET Core applications with Docker and Visual Studio Code.
 
 ## Example Docker Build Commands
 
@@ -10,13 +10,19 @@ Run from the src folder:
 
     docker build --rm --pull -f src\WebUI\Dockerfile -t webui .
 
-    --build-arg PAT=
+For the Azure Artifacts demo, create and pass in the personal access token build argument, for example:
+
+    docker build --rm --pull -f src\WebApi\Dockerfile -t webapi --build-arg PAT=[YOUR PAT HERE] .
 
 ## Debugging
 
 Create the container network in Docker:
 
     docker network create demo-net
+
+Be sure to choose the "Docker .NET Core Launch" VS Code debugging target in both WebApi and WebUI.
+
+## Running Containers Locally Without Debugging
 
 Example Docker run coommands:
 
