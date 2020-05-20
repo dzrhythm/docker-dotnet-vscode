@@ -1,0 +1,43 @@
+<template>
+    <div class="card runtime-environment">
+        <div class="card-header">
+            <h5 class="card-title">Runtime Environment: ${service}</h5>
+        </div>
+        <div class="card-body pt-0" with.bind="runtime">
+            <table class="table table-striped table-hover table-responsive">
+                <tr>
+                    <td>Containerized</td>
+                    <td>${runningInContainer}</td>
+                </tr>
+                <tr>
+                    <td>OS</td>
+                    <td>${osDescription}</td>
+                </tr>
+                <tr>
+                    <td>Framework</td>
+                    <td>${framework}</td>
+                </tr>
+                <tr>
+                    <td>Processors</td>
+                    <td>${processorCount}</td>
+                </tr>
+                <tr>
+                    <td>Memory Current Usage (MB)</td>
+                    <td>${memoryCurrentUsageMb}</td>
+                </tr>
+                <tr>
+                    <td>Memory Max Available (MB)</td>
+                    <td>${memoryMaxAvailableMb}</td>
+                </tr>
+                <tr if.bind="cGroupMemoryUsage > 0">
+                    <td>cGroup Memory Usage (MB):</td>
+                    <td>${cGroupMemoryUsageMb}</td>
+                </tr>
+                <tr if.bind="apiUri">
+                    <td>API URL</td>
+                    <td>${apiUri}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>
