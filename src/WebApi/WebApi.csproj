@@ -9,6 +9,10 @@
     <ProjectReference Include="..\SharedLib\SharedLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.3" />
+   </ItemGroup>
+   
   <!-- <ItemGroup>
     <PackageReference Include="AisDemo.Runtime " Version="1.0.0" />
   </ItemGroup> -->
