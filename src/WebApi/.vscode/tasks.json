@@ -81,11 +81,11 @@
                 "network": "demo-net",
                 "ports": [
                     {
-                        "containerPort": 80,
+                        "containerPort": 8000,
                         "hostPort": 5000
                     },
                     {
-                        "containerPort": 443,
+                        "containerPort": 4430,
                         "hostPort": 44386
                     }
                 ],
@@ -93,7 +93,7 @@
                     "NO_PROXY": ".demo-net, .internal",
                     "no_proxy": ".demo-net, .internal",
                     "ASPNETCORE_ENVIRONMENT": "DevContainer",
-                    "ASPNETCORE_URLS": "http://+:80"
+                    "ASPNETCORE_URLS": "http://+:8000"
                 }
             },
             "netCore": {
