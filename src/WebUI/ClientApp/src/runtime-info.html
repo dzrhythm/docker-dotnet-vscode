@@ -1,0 +1,8 @@
+<template>
+    <h4>Runtime</h4>
+    <div class="row">
+        <div class="col-lg" repeat.for="runtimeEnvironment of runtimeEnvironments">
+            <compose view="./runtime-env.html" with.bind="runtimeEnvironment"></compose>
+        </div>
+    </div>
+</template>
